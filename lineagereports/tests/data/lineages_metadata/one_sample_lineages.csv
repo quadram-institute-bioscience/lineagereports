@@ -1,0 +1,2 @@
+sequence_name,sample_date,epi_week,country,adm1,adm2,outer_postcode,is_surveillance,is_community,is_hcw,is_travel_history,travel_history,lineage,lineage_support,uk_lineage,acc_lineage,del_lineage,phylotype
+England/NORW-1234/2020,2020-01-01,19.0,UK,UK-ENG,NORFOLK,,,,,,,B.1.2,85.0,UK1234,B.1_234,B.1_234,UK1234_1

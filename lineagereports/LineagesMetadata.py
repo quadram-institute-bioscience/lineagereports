@@ -1,5 +1,6 @@
 '''Read the metadata from multiple files and create objects for each sample'''
 import csv
+from lineagereports.Sample import Sample
 
 class LineagesMetadata:
     
@@ -7,9 +8,10 @@ class LineagesMetadata:
         self.lineages_sample_filename = lineages_sample_filename
         self.extended_sample_filename = extended_sample_filename
         
-    def run(self):
+    def create_samples(self):
         samples = self.create_lineages_samples_from_file()
         self.add_extended_metadata_to_samples(samples)
+        return samples
 
     '''Take in the short lineages metadata file and create basic sample objects, with a dictionary key of the central_sample_id NORW-E1234'''
     def create_lineages_samples_from_file(self):
@@ -17,7 +19,7 @@ class LineagesMetadata:
         with open(self.lineages_sample_filename, "r") as f:
             reader = csv.DictReader(f)
             for row in reader:
-                central_sample_id = sequence["sequence_name"].split("/")[1]
+                central_sample_id = row["sequence_name"].split("/")[1]
                 sample = Sample(central_sample_id, row)
                 samples[central_sample_id] = sample
         return samples
