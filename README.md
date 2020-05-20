@@ -1,5 +1,5 @@
 # Lineage Reports
-
+Take in lineage and metadata files produced by COG and output reports.
 
 # Contents
   * [Introduction](#introduction)
@@ -44,13 +44,13 @@ tox
 ```
 
 # License
-Scagaire is free software, licensed under [GPLv3](https://raw.githubusercontent.com/quadram-institute-bioscience/lineagereports/master/VERSION/LICENSE).
+Lineage Reports is free software, licensed under [GPLv3](https://raw.githubusercontent.com/quadram-institute-bioscience/lineagereports/master/VERSION/LICENSE).
 
 # Feedback/Issues
 Please report any issues or to provide feedback please go to the [issues page](https://github.com/quadram-institute-bioscience/lineagereports/issues). If you make improvements to the software, add databases or extend profiles, please send us the changes though a [pull request](https://github.com/quadram-institute-bioscience/lineagereports/pulls) so that the whole community may benefit from your work.
 
 
 # Citation
-Scagaire,
-Andrew J Page, Justin O'Grady
+Lineage Reports,
+Andrew J Page
 https://github.com/quadram-institute-bioscience/lineagereports
