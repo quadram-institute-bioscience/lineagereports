@@ -31,4 +31,5 @@ class Sample:
                  setattr(self, md_field, sample_metadata[md_field])
              else:
                  setattr(self, md_field, None)
+         return self
                  
