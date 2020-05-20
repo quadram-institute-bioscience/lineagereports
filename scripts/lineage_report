@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+import sys
+import argparse
+import os
+import pkg_resources
+sys.path.append('../')
+sys.path.append('./')
+from lineagereports.LineageReport import LineageReport
+
+version = ''
+try:
+	version = pkg_resources.get_distribution("lineagereports").version
+except pkg_resources.DistributionNotFound:
+	version = 'x.y.z'
+
+parser = argparse.ArgumentParser(
+    description = '''
+    Create a report on a single lineage''',
+    usage = 'lineage_report [options] output_directory assembly.fasta', 
+    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+
+parser.add_argument('lineage', help='Lineage', type=str)
+parser.add_argument('lineages_sample_filename', help='Spreadsheet with lineage information per sample', type=str)
+parser.add_argument('extended_sample_filename', help='Spreadsheet with extended metadata per sample', type=str)
+
+parser.add_argument('--sequencing_centre', '-s', help='Restrict to sequencing centre', type=str)
+
+parser.add_argument('--debug', action='store_true', help='Turn on debugging', default = False)
+parser.add_argument('--verbose', '-v', action='store_true', help='Turn on verbose output', default = False)
+parser.add_argument('--version', action='version', version=str(version))
+
+options = parser.parse_args()
+
+g = LineageReport(options.lineages_sample_filename,  options.extended_sample_filename, options.sequencing_centre)
+g.create_uk_lineage_report(options.lineage)

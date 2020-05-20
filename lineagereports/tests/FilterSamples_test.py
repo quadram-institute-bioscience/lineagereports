@@ -6,11 +6,11 @@ from lineagereports.Sample import Sample
 
 class TestFilterSamples(unittest.TestCase):
    
-    #def test_filter_by_country(self):
-    #    samples = {'NORW-1111': Sample('NORW-1111', {'country': 'UK'}), 'NORW-2222': Sample('NORW-2222', {'country': 'UK'}), 'NORW-3333': Sample('NORW-3333', {'country': 'USA'})}
-    #    fs = FilterSamples(samples)
-    #    self.assertEqual(len(fs.filter_by_dict_of_attributes({'country': 'UK'})), 2)
-    #    self.assertEqual(len(fs.filter_by_dict_of_attributes({'country': 'USA'})), 1)
+    def test_filter_by_country(self):
+        samples = {'NORW-1111': Sample('NORW-1111', {'country': 'UK'}), 'NORW-2222': Sample('NORW-2222', {'country': 'UK'}), 'NORW-3333': Sample('NORW-3333', {'country': 'USA'})}
+        fs = FilterSamples(samples)
+        self.assertEqual(len(fs.filter_by_dict_of_attributes({'country': 'UK'})), 2)
+        self.assertEqual(len(fs.filter_by_dict_of_attributes({'country': 'USA'})), 1)
         
     def test_filter_by_multiple_criteria(self):
         samples = {
