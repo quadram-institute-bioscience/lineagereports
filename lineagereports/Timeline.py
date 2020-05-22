@@ -10,6 +10,7 @@ class Timeline:
         self.samples = samples
         self.lineage = lineage
         
+        
     def oldest_date(self):
         return min([self.samples[s].sample_date for s in self.samples])
         
